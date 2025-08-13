@@ -117,6 +117,19 @@ result = wait_for_scan_completion("scan-123", timeout=600, poll_interval=10)
 #### 8. `get_dependency_info()`
 Provides information about bbot's dependency management system and how the MCP server handles dependencies.
 
+## MCP config example:
+
+```
+{
+  "mcpServers": {
+    "bbot": {
+      "command": "uvx",
+      "args": ["--refresh","bbot-mcp"]
+    }
+  }
+}
+```
+
 ## Scan Management
 
 ### Scan Lifecycle

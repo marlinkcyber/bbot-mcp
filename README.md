@@ -43,10 +43,10 @@ bbot --install-all-deps
 
 ### Running the MCP Server
 
-After installation, the server can be started using the `bbot-mcp-server` command:
+After installation, the server can be started using the `bbot-mcp` command:
 
 ```bash
-bbot-mcp-server
+bbot-mcp
 ```
 
 Or directly with Python:
@@ -147,7 +147,7 @@ python tests/simple_test.py
 python tests/test_imports.py
 
 # Test the binary command
-bbot-mcp-server --help
+bbot-mcp --help
 ```
 
 ### Project Structure

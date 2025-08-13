@@ -99,8 +99,11 @@ class BbotScanManager:
                 preset.flags = list(existing_flags.union(new_flags))
             
             # Exclude problematic modules that cause dependency issues
-	    # problematic_modules = ['trufflehog', 'sslcert']  # Known problematic modules
-            problematic_modules = str.split(os.environ.get("BBOT_EXCLUDE_MODULES",""),",")  # Known problematic modules
+            exclude_modules_env = os.environ.get("BBOT_EXCLUDE_MODULES", "")
+            if exclude_modules_env:
+                problematic_modules = [m.strip() for m in exclude_modules_env.split(",") if m.strip()]
+            else:
+                problematic_modules = []
             if hasattr(preset, 'exclude_modules'):
                 existing_exclusions = set(preset.exclude_modules) if preset.exclude_modules else set()
                 preset.exclude_modules = list(existing_exclusions.union(set(problematic_modules)))

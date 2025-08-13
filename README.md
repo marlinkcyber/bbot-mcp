@@ -28,7 +28,7 @@ pip install -e .
 
 ### Using uvx (Run without installing)
 ```bash
-uvx bbot-mcp-server
+uvx bbot-mcp
 ```
 
 ## Install dependencies
